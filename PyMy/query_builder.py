@@ -51,20 +51,20 @@ class QueryBuilder(object):
 			@context - type(str): the type of the query: INSERT/ REPLACE
 		"""
 		_required_context = ('INSERT', 'REPLACE')
-		done = False
+		row_id = None
 		if context.upper() in _required_context and table and data and context:
 			if type(data) is dict:
 				keys = data.keys()
 				values = data.values()
 				query = "%s INTO %s (%s) VALUES  ('%s')" %(context, table, ",".join( keys ), "','".join( '%s' %self.escape_string(x) for x in values) )
 				try:
-					self.run_query(query)
+					cursor = self.run_query(query)
 					self.db.commit()
-					done = True
+					row_id = cursor.lastrowid
 				except Exception, e :
 					self.db.rollback()
 					raise e	
-		return done	
+		return row_id	
 
 	def run_select( self, table, what = '*', condition = None, order_by=None, limit = None ):
 		"""

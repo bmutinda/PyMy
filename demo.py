@@ -26,7 +26,7 @@ cursor = sql.run_query("select * from services where status=%s AND name=%s", (0,
 
 
 """ Insert in a table """
-# Insert as a context 
+# Insert as a context - returns the row id 
 inserted = sql.run_insert('services', {'name': 'service name here', 'description': 'service description here'})
 inserted2 = sql.run_insert('services', {'name': 'service name here', 'description': 'service description here'}, "REPLACE")
 
