@@ -5,7 +5,7 @@ from PyMy import MysqlConnector,QueryBuilder
 conn = None 
 sql = None 
 try:
-	conn = MysqlConnector.connect( '127.0.0.1', 'root', 'password', 'tuongee' )
+	conn = MysqlConnector.connect( '127.0.0.1', 'root', 'password', 'database' )
 except Exception as dbe:
 	print 'Database connection exception error ::%s' %(str(dbe))
 
