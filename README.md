@@ -5,11 +5,11 @@ Easy to use MySQL database wrapper utility for python using MySQLdb package
 MySQLdb - https://pypi.python.org/pypi/MySQL-python
 
 ### Downloading 
-. Done from git as a zip folder, extract
-. Clone from git via ```git clone https://github.com/mutindaz/PyMy```
+~ Done from git as a zip folder, extract
+~ Clone from git via ```git clone https://github.com/mutindaz/PyMy```
 
 ### Installation 
-. Copy the PyMy folder to your project folder then continue rocking... :)
+~ Copy the PyMy folder to your project folder then continue rocking... :)
 
 ### Getting started
 See demo.py
